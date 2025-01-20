@@ -60,12 +60,11 @@ while choice[0] =="y":
             else:
                 print("Your Password is weak")
         point1=0
-        while point1<0 or point1>10:
+        while point1==0:
+            point1=0
             number = input("Enter your 10 digit mobile number")
-            if len(number)==10:
-                for j in number:
-                    if j in "0123456789":
-                        point1=point1+1
+            if len(number)==10 and number.isdigit():
+                point1=10
             if point1==10:
                 mnumber.append(number)
             else:
@@ -77,3 +76,4 @@ while choice[0] =="y":
         print("Invalid choices or input")
         continue
     choice = input("Do you want to login or signup again, type yes or no").lower()
+print("Thank You")
